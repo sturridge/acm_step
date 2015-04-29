@@ -7,14 +7,13 @@ int main(){
 		if (n == 0 && u == 0 && d == 0)
 			return 0;
 		while(n > 0){
-			n -= u;
-			t++;
-			if (n <= 0)
+			n = n - u, ++t;
+			if (n <= 0){
 				printf("%d\n", t);
-			t++; // rest
-			n += d;
-			t++;
+				break;
+			}
+			n = n + d, ++t;
 		}
-		t = 0;
+		n = 0, u = 0, d = 0, t = 0;
 	}
 }
